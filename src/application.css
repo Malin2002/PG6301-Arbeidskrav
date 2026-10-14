@@ -1,0 +1,71 @@
+input:user-invalid {
+  outline: 1px solid red;
+}
+
+input:user-valid {
+  outline: 1px solid green;
+}
+
+.create-form {
+  form {
+    z-index: 3;
+    position: relative;
+    background-color: white;
+    padding-block: 0.5rem;
+  }
+  .overlay {
+    z-index: 2;
+    background-color: hsl(none 0% 50% / 0.5);
+    position: absolute;
+    inset: 0;
+    display: none;
+  }
+
+  &.editing {
+    .overlay {
+      display: unset;
+    }
+  }
+
+  .input-with-spinner {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
+
+.error {
+  border: 2px solid red;
+  border-radius: 5px;
+  padding: 0.25em;
+  display: inline-block;
+}
+
+.progress {
+  box-sizing: border-box;
+  aspect-ratio: 1;
+  border-style: solid;
+  border-radius: 50%;
+  content-visibility: hidden;
+
+  animation: infinite linear 800ms rotate-object;
+
+  border-color: lightgray;
+  border-bottom-color: gray;
+
+  border-width: 0.5em;
+  width: 2em;
+  font-size: 2rem;
+}
+span.progress {
+  display: inline-block;
+  font-size: 0.65rem;
+}
+
+@keyframes rotate-object {
+  0% {
+    rotate: 0;
+  }
+  100% {
+    rotate: 1turn;
+  }
+}
